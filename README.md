@@ -3,8 +3,7 @@
 ## Preconditions
 
 1. Clone project: `git clone https://github.com/ShapovalovII/data_from_html.git`
-2. You must have installed TrueAutomation client
-3. You must initialized this project with TrueAutomation on Capybara/RSpec `trueautomation init`
+2. You must have latest `chromedriver`
 
 ## How to run tests
 

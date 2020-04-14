@@ -15,9 +15,9 @@ options.add_preference(:download, directory_upgrade: true,
 options.add_preference(:browser, set_download_behavior: {behavior: 'allow'})
 
 RSpec.configure do |config|
-  Capybara.register_driver :true_automation_driver do |app|
+  Capybara.register_driver :driver do |app|
 
-    driver = TrueAutomation::Driver::Capybara.new(app, options: options)
+    driver = Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 
     bridge = driver.browser.send(:bridge)
 
@@ -36,7 +36,7 @@ RSpec.configure do |config|
     capybara.run_server = false
     capybara.default_max_wait_time = 5
 
-    capybara.default_driver = :true_automation_driver
+    capybara.default_driver = :driver
   end
 
   config.include Capybara::DSL
