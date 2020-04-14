@@ -7,6 +7,7 @@
 
 ## How to run tests
 
-1. Install bundler gem `gem install bundler`
-2. Downloads ruby gem `bundle install`
-3. Running tests using the TrueAutomation driver `rspec spec/test_scenario/example_spec.rb --tag=path/dir/with/*.html`
+1. Open console in folder `data_from_html` 
+2. Install bundler gem `gem install bundler`
+3. Downloads ruby gem `bundle install`
+4. Running tests `rspec spec/test_scenario/example_spec.rb --tag=path/to/folder`
