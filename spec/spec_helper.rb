@@ -7,7 +7,10 @@ require 'true_automation/rspec'
 require 'true_automation/driver/capybara'
 
 options = Selenium::WebDriver::Chrome::Options.new
-
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')
+options.add_argument('--disable-popup-blocking')
 options.add_preference(:download, directory_upgrade: true,
                        prompt_for_download: false,
                        default_directory: Dir.pwd)
