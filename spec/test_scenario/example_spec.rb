@@ -7,9 +7,14 @@ feature 'Capybara example', :"#{dir}" => true do
     script = File.read('./tree.js')
 
     Dir[dir + '/*.html'].each do |path|
-      visit "file://" + path
-      page.execute_script(script)
-      sleep 1
+      begin
+        visit "file://" + path
+        page.execute_script(script)
+        sleep 1
+      rescue
+        puts "Cannot read: " + path
+        next
+      end  
     end
   end
 end
