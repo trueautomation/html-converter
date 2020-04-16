@@ -9,5 +9,4 @@ group(:test) do
   gem 'rspec-steps'
   gem 'selenium-webdriver'
   gem 'single_test'
-  gem 'true_automation'
 end
