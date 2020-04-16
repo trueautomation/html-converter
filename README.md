@@ -7,7 +7,7 @@
 
 ## How to run tests
 
-1. `cd data_from_html` 
+1. `cd html-converter`
 2. Install bundler gem `gem install bundler`
 3. Downloads ruby gem `bundle install`
 4. Running tests `rspec spec/test_scenario/example_spec.rb --tag="path/to/folder  --overwrite"`
