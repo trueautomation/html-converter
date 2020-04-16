@@ -5,7 +5,7 @@
 1. Clone project: `git clone https://github.com/trueautomation/html-converter.git`
 2. You must have latest chromeDriver `brew cask install chromedriver`
 
-## How to run tests
+## How to run script
 
 1. `cd html-converter`
 2. Install bundler gem `gem install bundler`
