@@ -2,7 +2,7 @@
 
 ## Preconditions
 
-1. Clone project: `git clone https://github.com/ShapovalovII/data_from_html.git`
+1. Clone project: `git clone https://github.com/trueautomation/html-converter.git`
 2. You must have latest chromeDriver `brew cask install chromedriver`
 
 ## How to run tests
