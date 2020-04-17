@@ -11,18 +11,20 @@ feature 'Capybara example', :"#{tag}" => true do
     Dir[root_dir + '/**/'].each do |dir|
       Dir[dir + '*htm*'].each do |path|
         begin
-          puts path
-          visit "file://" + path
-          tree = page.evaluate_script(script)
+          if path =~ /\.[m]*htm[l]*$/
+            visit "file://" + path
+            tree = page.evaluate_script(script)
 
-          filename = File.basename(path, '.*htm*')
-          filename = filename + '_tree' unless filename === 'data'
-          filename = filename + '.json'
+            ext = File.extname(path)
+            filename = File.basename(path, ext)
+            filename = filename + '_tree' unless filename === 'data'
+            filename = filename + '.json'
 
-          if !File.exists?(dir + filename) || overwrite
-            file = File.open(dir + filename, "w")
-            file.puts tree
-            file.close
+            if !File.exists?(dir + filename) || overwrite
+              file = File.open(dir + filename, "w")
+              file.puts tree
+              file.close
+            end
           end
         rescue
           puts "Cannot read: " + path
