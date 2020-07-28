@@ -6,6 +6,7 @@ root_dir, overwrite = [tag_desc.first, tag_desc.include?('--overwrite')]
 
 feature 'Capybara example', :"#{tag}" => true do
   scenario 'Test example' do
+    page.driver.browser.manage.timeouts.script_timeout = 200
     script = File.read('./tree.js')
 
     Dir[root_dir + '/**/'].each do |dir|
